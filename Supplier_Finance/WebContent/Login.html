@@ -19,9 +19,7 @@
 		}
 
 		function setCancel() {
-			document.getElementById('user').setAttribute("hidden", "false");
-			document.getElementById('frm-supplier').removeAttribute("hidden", "true");
-			document.getElementById('frm-client').setAttribute("hidden", "true");
+           		location.replace("login.html");
 		}
 	</script>
 </head>
@@ -47,13 +45,14 @@
 						<button type="submit" id="btn-login">LOGIN</button>
 					</td>
 					<td>
-						<button type="submit" id="btn-cancel" onclick="setCancel()">Cancel</button>
+						<button type="button" id="btn-cancel" onclick="setCancel()">Cancel</button>
 					</td>
 				</tr>
 				<tr>
 					<td colspan="2">New user? <a href="register.html">Sign up</a> here!</td>
 				</tr>
 			</table>
+			<input type="hidden" value="client"/>
 		</form>
 	</div>
 	<div id="frm-supplier" hidden="true">
@@ -72,13 +71,14 @@
 						<button type="submit" id="btn-login">Login</button>
 					</td>
 					<td>
-						<button type="submit" id="btn-cancel" onclick="setCancel()">Cancel</button>
+						<button type="button" id="btn-cancel" onclick="setCancel()">Cancel</button>
 					</td>
 				</tr>
 				<tr>
 					<td colspan="2">New user? <a href="register.html">Sign up</a> here!</td>
 				</tr>
 			</table>
+			<input type="hidden" value="supplier"/>
 		</form>
 	</div>
 </body>
