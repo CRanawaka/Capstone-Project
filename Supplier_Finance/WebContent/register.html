@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1, initial-scale=1.0">
+	<title>Digital Working Capital Platform</title>
+</head>
+<body>
+	<section class="container">
+		<div id="user-register">
+			<h2>Register</h2>
+			<form action="test.html" method="post" name="frm-register" onsubmit="return validateForm()">
+				<p>
+					<input type="radio" name="user" id="client">Client&emsp;
+					<input type="radio" name="user" id="supplier">Supplier
+				</p>
+				<fieldset>
+					<legend>Personal:</legend>
+						<table>
+						<tr>
+							<td>Name</td>
+							<td>: <input type="text" name="name" id="name" placeholder="Name" required/></td>
+						</tr>
+						<tr>
+							<td>Address</td>
+							<td>: <input type="text" name="address-line1" id="line1" placeholder="Address Line 1" required/></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>&nbsp;&nbsp;<input type="text" name="address-line2" id="line2" placeholder="Address Line 2" required/></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>&nbsp;&nbsp;
+								<!-- <input type="text" name="address-city" id="city" placeholder="City" required/> -->
+								<select name="city" id="cityList">
+									<option value="City" default>City</option>
+									<option value="Colombo">Colombo</option>
+									<option value="Kandy">Kandy</option>
+									<option value="Colombo">Colombo</option>
+									<option value="Dehiwala">Dehiwala</option>
+									<option value="Moratuwa">Moratuwa</option>
+									<option value="Kotte">Kotte</option>
+									<option value="Negambo">Negambo</option>
+									<option value="Kandy">Kandy</option>
+									<option value="Kalmune">Kalmune</option>
+									<option value="Vavuniya">Vavuniya</option>
+									<option value="Galle">Galle</option>
+									<option value="Trincomalee">Trincomalee</option>
+									<option value="Jaffna">Jaffna</option>
+									<option value="Dambulla">Dambulla</option>
+									<option value="Kolonnawa">Kolonnawa</option>
+									<option value="Anuradhapura">Anuradhapura</option>
+									<option value="Rathnapura">Rathnapura</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>&nbsp;&nbsp;
+								<!-- <input type="text" name="address-city" id="city" placeholder="City" required/> -->
+								<select name="province" id="provinceList">
+									<option value="Province" default>Province</option>
+									<option value="Central">Central Province</option>
+									<option value="Eastern">Eastern Province</option>
+									<option value="North Central">North Central Province</option>
+									<option value="Northern">Northern Province</option>
+									<option value="North Western">North Western Province</option>
+									<option value="Sabaragamuwa">Sabaragamuwa Province</option>
+									<option value="Southern">Southern Province</option>
+									<option value="Uva">Uva Province</option>
+									<option value="Western">Western Province</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>&nbsp;&nbsp;
+								<!-- <input type="text" name="address-city" id="city" placeholder="City" required/> -->
+								<select name="country" id="countryList">
+									<option value="Country" default>Country</option>
+									<option value="SriLanka">Sri Lanka</option>
+									<option value="India">India</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>Email</td>
+							<td>: <input type="email" name="email" id="email" placeholder="example@abc.com" required/></td>
+						</tr>
+						<tr>
+							<td colspan="2" id="personalErrMsg" hidden="true"></td>
+						</tr>
+						</table>
+				</fieldset><br>
+				<fieldset>
+					<legend>Bank Details:</legend>
+					<table>
+						<tr>
+							<td>Loan Account Number</td>
+							<td>: <input type="text" name="loan-acc-no" id="loanAccNo" placeholder="12345678" required/></td>
+						</tr>
+						<tr>
+							<td>Loan Information</td>
+							<td>: <input type="text" name="bank-code" id="bankCode" placeholder="Bank Code" required/></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>&nbsp;&nbsp;<input type="text" name="interest-rate" id="interestRate" placeholder="Interest Rate" required/></td>
+						</tr>
+						<tr>
+							<td colspan="2" id="bankErrMsg" hidden="true"></td>
+						</tr>
+					</table>
+				</fieldset><br>
+				<fieldset>
+					<legend>Login Details:</legend>
+					<table>
+						<tr>
+							<td>Username</td>
+							<td>: <input type="text" name="username" id="username" placeholder="John" required/></td>
+						</tr>
+						<tr>
+							<td>Password</td>
+							<td>: <input type="password" name="username" id="username" placeholder="&bull;&bull;&bull;&bull;&bull;" required/></td>
+						</tr>
+						<tr>
+							<td colspan="2" id="loginErrMsg" hidden="true"></td>
+						</tr>
+					</table>
+				</fieldset><br>
+				<table>
+					<tr>
+						<td><button type="submit" id="frm-sign">Register</button></td>
+						<td><button type="reset" id="frm-reset">Clear</button></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</section>
+</body>
+</html>
