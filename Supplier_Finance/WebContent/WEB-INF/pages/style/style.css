@@ -1,0 +1,98 @@
+/* 
+    * Author    : Sanjula3
+    * Title     : Supplier Finance Project
+    * Version   : 1.0
+*/
+
+* {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-image: url(https://source.unsplash.com/Ok76F6yW2iA);
+    background-size: cover;
+}
+
+/* Login CSS */
+.login-container {
+    width: 50%;
+    margin-top: 5%;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+}
+.login-container small {
+    color: white;
+}
+.btn-login {
+    width: 100px;
+    border-radius: 5px;
+    border: none;
+}
+.p-sign {
+    margin-top: 2%;
+}
+.p-sign a{
+    text-decoration: none;
+    color: white;
+}
+.p-sign a:hover {
+    color: rgb(136, 255, 134);
+}
+.form-item {
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+}
+.icon {
+    width: 15%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5cb85c;
+}
+.box-left {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Register CSS */
+.register-container {
+    width: 50%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+}
+.register-container small {
+    color: white;
+}
+.user-pill {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-pills li,
+.nav-pills li a:focus,
+.nav-pills li a:hover {
+   background-color: #5cb85c;
+   width: 100px;
+   border-radius: 5px;
+}
+.nav a {
+    text-decoration: none;
+    color: white;
+}
+.register-item {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+}
