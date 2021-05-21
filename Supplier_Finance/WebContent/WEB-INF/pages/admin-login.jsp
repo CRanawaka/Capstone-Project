@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -7,7 +5,7 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Supplier</title>
+    <title>Login | Admin</title>
     <link rel="icon" href="./images/icon.png">
     <!-- Boostrap Framework -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -149,13 +147,9 @@
 			var qryString = window.location.search;
 			var urlParam = new URLSearchParams(qryString);
 			var msg = urlParam.get('msg');
-			if (msg == "success") {
-				document.getElementById('error').className = "label label-success";
-				document.getElementById('error').innerHTML = "Supplier register successfully.";
-			}
-			if (msg == "supplier") {
+			if (msg == "admin") {
 				document.getElementById('error').className = "label label-warning";
-				document.getElementById('error').innerHTML = "Invalid supplier username or password";
+				document.getElementById('error').innerHTML = "Invalid admin username or password";
 			}
 		}
 	</script>
@@ -167,16 +161,16 @@
                 <span><a href="index.jsp">&#8617;</a></span>
                 <div class="info">
                     <h3>LOGIN</h3>
-                    <h4>Supplier</h4>
-                    <p>User your supplier registered <b>username</b> and <b>password</b> to log in.</p>
+                    <h4>Admin</h4>
+                    <p>User your authorized <b>username</b> and <b>password</b> to log in.</p>
                 </div>
                 <div class="login-img">
-                    <img src="https://image.freepik.com/free-vector/distribution-hemp-products-abstract-concept-vector-illustration-retail-cannabis-business-marijuana-sales-market-order-online-hemp-extract-food-supplement-wholesale-abstract-metaphor_335657-1443.jpg" alt="login">
+                    <img src="https://image.freepik.com/free-vector/social-media-data-center-smm-stats-digital-marketing-research-market-trends-analysis-female-expert-studying-online-survey-results_335657-2392.jpg" alt="login">
                 </div>
             </div>
             <div class="col-lg-4 h-100 details bg-light">
                 <div class="client-login">
-                    <form:form action="supplierlogin" method="post">
+                    <form:form action="adminlogin" method="post">
                         <div class="form-group">
                             <h4>
                                 <span id="error"></span>
@@ -201,11 +195,6 @@
                                 me</label>
                         </div>
                         <button type="submit" class="btn-login">Submit</button>
-                        <div class="form-group">
-                            <p class="p-sign">
-                                New user? <a href="supplier-register">Sign up</a> here
-                            </p>
-                        </div>
                     </form:form>
                 </div>
             </div>
