@@ -141,6 +141,12 @@
         .p-sign a {
             text-decoration: none;
         }
+        
+        .error {
+        	display: flex;
+        	align-items: center;
+            justify-content: center;
+        }
     </style>
     <script>
 		function checkError() {
@@ -171,7 +177,7 @@
             <div class="col-lg-4 h-100 details bg-light">
                 <div class="client-login">
                     <form:form action="adminlogin" method="post">
-                        <div class="form-group">
+                        <div class="form-group error">
                             <h4>
                                 <span id="error"></span>
                             </h4>
