@@ -232,10 +232,10 @@
             </div>
             <div class="login-cards">
                 <div class="client">
-                    <button class="btn-bank"><a href="client-login">Client</a></button>
+                    <a href="client-login"><button class="btn-bank">Client</button></a>
                 </div>
                 <div class="supplier">
-                    <button class="btn-bank"><a href="supplier-login">Supplier</a></button>
+                    <a href="supplier-login"><button class="btn-bank">Supplier</button></a>
                 </div>
             </div>
             <div class="admin">
