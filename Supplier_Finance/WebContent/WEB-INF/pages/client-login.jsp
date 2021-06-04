@@ -142,15 +142,25 @@
         .p-sign a {
             text-decoration: none;
         }
+        
+        .error {
+        	display: flex;
+        	align-items: center;
+            justify-content: center;
+        }
     </style>
     <script>
         function checkError() {
             var qryString = window.location.search;
             var urlParam = new URLSearchParams(qryString);
             var msg = urlParam.get('msg');
-            if (msg == "admin") {
+            if (msg == "success") {
+				document.getElementById('error').className = "label label-success";
+				document.getElementById('error').innerHTML = "Client register successfully.";
+			}
+            if (msg == "client") {
                 document.getElementById('error').className = "label label-warning";
-                document.getElementById('error').innerHTML = "Invalid admin username or password";
+                document.getElementById('error').innerHTML = "Invalid client username or password";
             }
         }
         </script>
@@ -172,7 +182,7 @@
             <div class="col-lg-4 h-100 details bg-light">
                 <div class="client-login">
                     <form:form action="clientlogin" method="post">
-                        <div class="form-group">
+                        <div class="form-group error">
                             <h4>
                                 <span id="error"></span>
                             </h4>
