@@ -40,39 +40,61 @@ public class UserController {
 		return "supplier-register";
 	}
 
-	@RequestMapping("/admin")
+	@RequestMapping("/admin-login")
 	public String showAdmin(Model m) {
 		m.addAttribute("command", new User());
-		return "admin";
+		return "admin-login";
 	}
 
 	@RequestMapping(value = "/saveclient", method = RequestMethod.POST)
-	public String saveClient(@ModelAttribute("client") User user) {
+	public String saveClient(@ModelAttribute("client") User user, Model m) {
 		userDAO.saveClient(user);
+		m.addAttribute("msg", "success");
 		return "redirect:/client-login";
 	}
 
 	@RequestMapping(value = "/savesupplier", method = RequestMethod.POST)
-	public String saveSupplier(@ModelAttribute("supplier") User user) {
-		userDAO.saveClient(user);
+	public String saveSupplier(@ModelAttribute("supplier") User user, Model m) {
+		userDAO.saveSupplier(user);
+		m.addAttribute("msg", "success");
 		return "redirect:/supplier-login";
 	}
 
 	@RequestMapping(value = "/clientlogin", method = RequestMethod.POST)
-	public String checkUserClient(@ModelAttribute("client") User user) {
-		userDAO.getUserClient(user.getUsername(), user.getPassword());
-		return "client-dashboard";
+	public String checkUserClient(@ModelAttribute("clientLogin") User user,
+			Model m) {
+		String msg = "";
+		if (userDAO.getUserClient(user.getUsername(), user.getPassword())) {
+			msg = "client-dashboard";
+		} else {
+			m.addAttribute("msg", "client");
+			msg = "redirect:/client-login";
+		}
+		return msg;
 	}
 
 	@RequestMapping(value = "/supplierlogin", method = RequestMethod.POST)
-	public String checkUserSupplier(@ModelAttribute("client") User user) {
-		userDAO.getUserSupplier(user.getUsername(), user.getPassword());
-		return "supplier-dashboard";
+	public String checkUserSupplier(@ModelAttribute("supplierLogin") User user,
+			Model m) {
+		String msg = "";
+		if (userDAO.getUserSupplier(user.getUsername(), user.getPassword())) {
+			msg = "supplier-dashboard";
+		} else {
+			m.addAttribute("msg", "supplier");
+			msg = "redirect:/supplier-login";
+		}
+		return msg;
 	}
 
 	@RequestMapping(value = "/adminlogin", method = RequestMethod.POST)
-	public String checkAdmin(@ModelAttribute("admin") User user) {
-		userDAO.getAdmin(user.getUsername(), user.getPassword());
-		return "admin-dashboard";
+	public String checkAdmin(@ModelAttribute("adminLogin") User user, Model m) {
+		String msg = "";
+		if (userDAO.getAdmin(user.getUsername(), user.getPassword())) {
+			msg = "admin-dashboard";
+		} else {
+			m.addAttribute("msg", "admin");
+			msg = "redirect:/admin-login";
+		}
+		return msg;
 	}
 }
