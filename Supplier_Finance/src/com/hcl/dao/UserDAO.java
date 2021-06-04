@@ -1,5 +1,6 @@
 package com.hcl.dao;
 
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -64,21 +65,48 @@ public class UserDAO {
 		return jdbcTemplate.update(sql);
 	}
 
-	public User getUserClient(String username, String password) {
-		String sql = "SELECT * FROM user_customer WHERE username = ? AND password = ?";
-		return jdbcTemplate.queryForObject(sql, new Object[] { username,
-				password }, new BeanPropertyRowMapper<User>(User.class));
+	public boolean getUserClient(String username, String password) {
+		String sql = "SELECT username, password FROM user_customer WHERE username = ? AND password = ?";
+		boolean user;
+		try {
+			jdbcTemplate.queryForObject(sql,
+					new Object[] { username, password },
+					new BeanPropertyRowMapper<User>(User.class));
+			user = true;
+		} catch (EmptyResultDataAccessException e) {
+			user = false;
+		}
+
+		return user;
 	}
 
-	public User getUserSupplier(String username, String password) {
-		String sql = "SELECT * FROM user_customer WHERE username = ? AND password = ?";
-		return jdbcTemplate.queryForObject(sql, new Object[] { username,
-				password }, new BeanPropertyRowMapper<User>(User.class));
+	public boolean getUserSupplier(String username, String password) {
+		String sql = "SELECT username, password FROM user_supplier WHERE username = ? AND password = ?";
+		boolean user;
+		try {
+			jdbcTemplate.queryForObject(sql,
+					new Object[] { username, password },
+					new BeanPropertyRowMapper<User>(User.class));
+			user = true;
+		} catch (EmptyResultDataAccessException e) {
+			user = false;
+		}
+
+		return user;
 	}
 
-	public User getAdmin(String username, String password) {
-		String sql = "SELECT * FROM user_customer WHERE username = ? AND password = ?";
-		return jdbcTemplate.queryForObject(sql, new Object[] { username,
-				password }, new BeanPropertyRowMapper<User>(User.class));
+	public boolean getAdmin(String username, String password) {
+		String sql = "SELECT username, password FROM user_admin WHERE username = ? AND password = ?";
+		boolean user;
+		try {
+			jdbcTemplate.queryForObject(sql,
+					new Object[] { username, password },
+					new BeanPropertyRowMapper<User>(User.class));
+			user = true;
+		} catch (EmptyResultDataAccessException e) {
+			user = false;
+		}
+
+		return user;
 	}
 }
